@@ -1,0 +1,75 @@
+{
+  "actorSpecification": 1,
+  "name": "naukri-scraper",
+  "title": "Naukri.com Job Scraper — Extract Job Listings",
+  "description": "Scrape job listings from Naukri.com, India's #1 job board. Extract job titles, companies, salaries, locations, skills, and more. Perfect for recruiters, job aggregators, and market research. Works with Claude, ChatGPT, and AI agents via Apify MCP.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "categories": ["JOBS", "LEAD_GENERATION", "AI"],
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Job Title",
+        "description": "The job title/position",
+        "template": "{{{title}}}"
+      },
+      "url": {
+        "type": "string",
+        "title": "Job URL",
+        "description": "Direct link to the job posting",
+        "template": "{{{url}}}"
+      },
+      "company": {
+        "type": "string",
+        "title": "Company Name",
+        "description": "Name of the hiring company",
+        "template": "{{{company}}}"
+      },
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "description": "Job location",
+        "template": "{{{location}}}"
+      },
+      "experience": {
+        "type": "string",
+        "title": "Experience Required",
+        "description": "Required years of experience",
+        "template": "{{{experience}}}"
+      },
+      "salary": {
+        "type": "string",
+        "title": "Salary",
+        "description": "Salary range (if available)",
+        "template": "{{{salary}}}"
+      },
+      "skills": {
+        "type": "array",
+        "title": "Skills",
+        "description": "Required skills for the job"
+      },
+      "description": {
+        "type": "string",
+        "title": "Job Description",
+        "description": "Brief job description",
+        "template": "{{{description}}}"
+      },
+      "posted_date": {
+        "type": "string",
+        "title": "Posted Date",
+        "description": "When the job was posted",
+        "template": "{{{posted_date}}}"
+      },
+      "scrapedAt": {
+        "type": "string",
+        "title": "Scraped At",
+        "description": "Timestamp when this job was scraped",
+        "template": "{{{scrapedAt}}}"
+      }
+    }
+  }
+}
