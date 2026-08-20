@@ -47,11 +47,6 @@
         "description": "Salary range (if available)",
         "template": "{{{salary}}}"
       },
-      "skills": {
-        "type": "array",
-        "title": "Skills",
-        "description": "Required skills for the job"
-      },
       "description": {
         "type": "string",
         "title": "Job Description",
