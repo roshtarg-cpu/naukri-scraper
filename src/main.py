@@ -10,7 +10,7 @@ async def main():
         # Get input
         actor_input = await Actor.get_input() or {}
         max_results = actor_input.get('maxResults', 100)
-        keywords = actor_input.get('keywords', '')
+        search_query = actor_input.get('searchQuery', '')
         location = actor_input.get('location', 'india')
         
         # Get proxy configuration
@@ -23,8 +23,8 @@ async def main():
         
         # Build search URL
         base_url = 'https://www.naukri.com'
-        if keywords:
-            search_url = f'{base_url}/{keywords.replace(" ", "-")}-jobs'
+        if search_query:
+            search_url = f'{base_url}/{search_query.replace(" ", "-")}-jobs'
             if location and location != 'india':
                 search_url = f'{search_url}-in-{location.replace(" ", "-")}'
         else:
